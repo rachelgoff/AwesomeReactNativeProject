@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "AwesomeProject",
+    "icon": "./images/bottle.png",
+    "version": "1.0.0",
+    "slug": "pottery-app",
+    "sdkVersion": "27.0.0",
+    "ios": {
+      "bundleIdentifier": "com.mrpanda.pottery"
+    },
+    "android": {
+      "package": "com.mrpanda.pottery",
+      "publishBundlePath": "android/app/src/main/assets/shell-app.bundle",
+      "publishManifestPath": "android/app/src/main/assets/shell-app-manifest.json"
+    },
+    "isDetached": true,
+    "detach": {
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.5.3-sdk27.0.0-408c8d77-8d1f-4784-b7b4-93826250663a.tar.gz"
+    },
+    "scheme": "exp105ef9182a0d49f39cb0b04010ac7091"
+  }
+}
