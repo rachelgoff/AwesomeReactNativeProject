@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 export default class PotteryType extends Component{
+    
+
+  
     render(){
         return(
             <View style={styles.potteryContainer}>
@@ -19,6 +22,11 @@ export default class PotteryType extends Component{
                     <Text style={styles.potteryDescription}
                     onPress={() => this.props.navigation.navigate('ClayType')}>
                     I'll do it!</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.potteryDescription}
+                    onPress={() => this.props.navigation.navigate('PotteryLists')}>
+                    What do I have in progress?</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Text style={styles.buttonTextLeft} 

@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
@@ -10,6 +11,9 @@ import GlazeType from './src/components/PotteryType/GlazeType';
 import FiringType from './src/components/PotteryType/FiringType';
 import AfterFirstFiring from './src/components/PotteryType/AfterFirstFiring';
 import CameraScreen from './src/components/PotteryType/CameraScreen';
+import PotteryLists from './src/components/SummaryPage/PotteryLists';
+import ajax from './src/ajax';
+
 
 
 const RootStack = createStackNavigator(
@@ -21,7 +25,8 @@ const RootStack = createStackNavigator(
     GlazeType: {screen: GlazeType},
     FiringType: {screen: FiringType},
     AfterFirstFiring: {screen: AfterFirstFiring},
-    CameraScreen: {screen: CameraScreen}
+    CameraScreen: {screen: CameraScreen},
+    PotteryLists: {screen: PotteryLists}
   },
   {
     initialRouteName:'Login',
@@ -34,6 +39,8 @@ const RootStack = createStackNavigator(
 console.log(clayData.clayType[0])
 
 export default class App extends Component {
+ 
+  
   render(){
     return (
       <RootStack clayTypes={clayData.clayType}/>

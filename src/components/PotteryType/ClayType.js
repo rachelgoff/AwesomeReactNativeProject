@@ -49,7 +49,7 @@ export default class ClayType extends Component{
                           onPress={() => this.props.navigation.goBack()}>
                     Go back</Text>
                 </TouchableOpacity>
-               
+             
             </View>
             )
     

@@ -248,6 +248,7 @@ export default class CameraScreen extends React.Component {
           <TouchableOpacity style={styles.flipButton} onPress={this.toggleWB.bind(this)}>
             <Text style={styles.flipText}> WB: {this.state.whiteBalance} </Text>
           </TouchableOpacity>
+
         </View>
         <View
           style={{
@@ -310,7 +311,13 @@ export default class CameraScreen extends React.Component {
       ? this.renderCamera()
       : this.renderNoPermissions();
     const content = this.state.showGallery ? this.renderGallery() : cameraScreenContent;
-    return <View style={styles.container}>{content}</View>;
+    return <View 
+    style={styles.container}>{content}
+        <TouchableOpacity style={styles.goBackButton} onPress={() => this.props.navigation.goBack()}>
+          <Text style={styles.flipText}> Go Back </Text>
+        </TouchableOpacity>
+          
+          </View>;
   }
 }
 
@@ -391,4 +398,16 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
   },
+  goBackButton: {
+    height: 40,
+    marginHorizontal: 2,
+    marginBottom: 10,
+    marginTop: 20,
+    borderRadius: 8,
+    borderColor: 'white',
+    borderWidth: 1,
+    padding: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });

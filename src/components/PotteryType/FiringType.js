@@ -40,7 +40,7 @@ export default class FireType extends Component{
    
                 <View style={styles.textContainer}>
                     <Text style={styles.potteryDescription}>
-                    What's the fire type? 
+                    What's the firing type? 
                     </Text>
                 </View>
                 <PickFiringType style={styles.potteryDescription}/>
