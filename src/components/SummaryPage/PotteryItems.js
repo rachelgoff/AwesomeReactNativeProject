@@ -7,6 +7,7 @@ import PotteryItem from './PotteryItem'
 export default class PotteryItems extends Component{
     static propTypes = {
         potteryLists: PropTypes.array.isRequired,
+        onItemPress: PropTypes.func.isRequired
     }
     
     
@@ -15,7 +16,7 @@ export default class PotteryItems extends Component{
            <View style={styles.potteryContainer}>
              <FlatList
               data={this.props.potteryLists}
-              renderItem={({item}) => <PotteryItem potteryItem={item} />}
+              renderItem={({item}) => <PotteryItem potteryItem={item} onPress={this.pros.onItemPress} />}
             />
          
            </View>

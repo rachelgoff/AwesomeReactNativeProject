@@ -4,21 +4,15 @@ import PropTypes from 'prop-types';
 import { priceDisplay } from '../../util'
 
 
-export default class PotteryItem extends Component{
+export default class PotteryItemDetail extends Component{
     static propTypes = {
         potteryItem: PropTypes.object.isRequired,
-        onPress: PropTypes.func.isRequired
     }
-    
-    handlePress = ()=>{
-        this.props.onPress(this.props.potteryItem.key)
-    }
-    
     
     render(){
         const { potteryItem } = this.props;
         return(
-           <TouchableOpacity style={styles.potteryContainer} onPress={this.handlePress}>
+           <TouchableOpacity style={styles.potteryContainer}>
             <Image style={styles.image} source={{ uri: potteryItem.media[0]}}/>
             <View style={styles.info}> 
                 <Text style={styles.title} >{ potteryItem.title }</Text>
@@ -27,6 +21,7 @@ export default class PotteryItem extends Component{
                   <Text style={styles.price}>{ priceDisplay(potteryItem.price) }</Text>
                  </View>
              </View>
+             <Text>...</Text>
            </TouchableOpacity>
          )
     
