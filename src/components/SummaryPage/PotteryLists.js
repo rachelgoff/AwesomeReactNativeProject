@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
 import PotteryItems from './PotteryItems';
+import PotteryItem from './PotteryItem';
 import PotteryItemDetail from './PotteryItemDetail';
 
 import ajax from '../../ajax.js'
@@ -8,11 +9,11 @@ import ajax from '../../ajax.js'
 export default class PotteryLists extends Component{
     state = {
     potteryLists: [],
-    currentPotteryId: null
+    currentPotteryId: null,
   }
   async componentDidMount(){
     const potteryLists = await ajax.fetchPotteryLists();
-    console.log(potteryLists);
+
     this.setState(() => {
       return { potteryLists }
       
@@ -33,23 +34,17 @@ export default class PotteryLists extends Component{
     render(){
         
         if (this.state.currentPotteryId) {
-            return <PotteryItemDetail potteryItem = {this.currentPottery()}/>
+            return <PotteryItemDetail initialPotteryData = {this.currentPottery()}/>
         }
         
         if (this.state.potteryLists.length > 0) {
-            return <PotteryItems potteryLists={this.state.potteryLists} onItemPress={this.state.setCurrentPottery}/>
+            return <PotteryItems potteryLists={this.state.potteryLists} onItemPress={this.setCurrentPottery}/>
         }
         
         return(
            <View style={styles.potteryContainer}>
                
                 <Text style={styles.potteryDescription}> PotteryLists </Text>
-                
-                <TouchableOpacity>
-                    <Text style={styles.buttonTextLeft} 
-                          onPress={() => this.props.navigation.goBack()}>
-                    Go back</Text>
-                </TouchableOpacity>
          
            </View>
          )

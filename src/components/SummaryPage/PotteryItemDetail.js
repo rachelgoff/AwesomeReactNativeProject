@@ -6,13 +6,18 @@ import { priceDisplay } from '../../util'
 
 export default class PotteryItemDetail extends Component{
     static propTypes = {
-        potteryItem: PropTypes.object.isRequired,
+        initialPotteryData: PropTypes.object.isRequired,
+    }
+    
+    state = {
+        potteryItem: this.props.initialPotteryData,
     }
     
     render(){
-        const { potteryItem } = this.props;
+        const { potteryItem } = this.state;
         return(
-           <TouchableOpacity style={styles.potteryContainer}>
+        <View style={styles.potteryContainer}>
+           <TouchableOpacity style={styles.potteryDetail}>
             <Image style={styles.image} source={{ uri: potteryItem.media[0]}}/>
             <View style={styles.info}> 
                 <Text style={styles.title} >{ potteryItem.title }</Text>
@@ -23,6 +28,7 @@ export default class PotteryItemDetail extends Component{
              </View>
              <Text>...</Text>
            </TouchableOpacity>
+           </View>
          )
     
     }
@@ -33,17 +39,26 @@ const styles = StyleSheet.create({
     potteryContainer:{
         flex: 1,
         backgroundColor:'#55efc4'
+        
 
+    },
+    potteryDetail: {
+        marginTop: 50,
+        marginHorizontal: 12,
+        
+     
     },
     image: {
         width:'100%',
         height:150
+
     },
     info: {
         padding: 10,
         borderColor: '#bbb',
         borderWidth: 1,
         borderTopWidth: 0,
+  
         
     },
     title: {

@@ -10,7 +10,7 @@ export default class PotteryItem extends Component{
         onPress: PropTypes.func.isRequired
     }
     
-    handlePress = ()=>{
+    handlePress = () =>{
         this.props.onPress(this.props.potteryItem.key)
     }
     
@@ -18,7 +18,7 @@ export default class PotteryItem extends Component{
     render(){
         const { potteryItem } = this.props;
         return(
-           <TouchableOpacity style={styles.potteryContainer} onPress={this.handlePress}>
+           <TouchableOpacity style={styles.potteryContainer} onPress={()=>this.handlePress()}>
             <Image style={styles.image} source={{ uri: potteryItem.media[0]}}/>
             <View style={styles.info}> 
                 <Text style={styles.title} >{ potteryItem.title }</Text>
