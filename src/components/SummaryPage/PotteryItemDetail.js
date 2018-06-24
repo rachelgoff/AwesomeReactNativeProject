@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { priceDisplay } from '../../util'
+import ajax from '../../ajax'
 
 
 export default class PotteryItemDetail extends Component{
@@ -9,10 +10,22 @@ export default class PotteryItemDetail extends Component{
         initialPotteryData: PropTypes.object.isRequired,
     }
     
-    state = {
+    constructor(props){
+        super(props);
+           this.state = {
         potteryItem: this.props.initialPotteryData,
     }
+    }
+        
+
+ 
+ 
+    async componentDidMount(){
+        const fullPotteryDetail= await ajax.fetchPotteryDetail(this.state.potteryItem.key)
+        console.log(fullPotteryDetail)
+    }
     
+
     render(){
         const { potteryItem } = this.state;
         return(

@@ -9,18 +9,18 @@ import ajax from '../../ajax.js'
 export default class PotteryLists extends Component{
     state = {
     potteryLists: [],
-    currentPotteryId: null,
+    currentPotteryId: null
   }
   async componentDidMount(){
     const potteryLists = await ajax.fetchPotteryLists();
-
+    console.log(potteryLists);
     this.setState(() => {
       return { potteryLists }
       
     });
   }
   setCurrentPottery = (potteryId) => {
-      this.setState({
+      this.setState(()=>{
           currentPotteryId: potteryId
       })
   }
@@ -34,17 +34,23 @@ export default class PotteryLists extends Component{
     render(){
         
         if (this.state.currentPotteryId) {
-            return <PotteryItemDetail initialPotteryData = {this.currentPottery()}/>
+            return <PotteryItemDetail potteryItem = {this.currentPottery()}/>
         }
         
         if (this.state.potteryLists.length > 0) {
-            return <PotteryItems potteryLists={this.state.potteryLists} onItemPress={this.setCurrentPottery}/>
+            return <PotteryItems potteryLists={this.state.potteryLists} onItemPress={()=>this.state.setCurrentPottery}/>
         }
         
         return(
            <View style={styles.potteryContainer}>
                
                 <Text style={styles.potteryDescription}> PotteryLists </Text>
+                
+                <TouchableOpacity>
+                    <Text style={styles.buttonTextLeft} 
+                          onPress={() => this.props.navigation.goBack()}>
+                    Go back</Text>
+                </TouchableOpacity>
          
            </View>
          )

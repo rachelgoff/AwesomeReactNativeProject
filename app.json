@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "AwesomeProject",
-    "icon": "./images/bottle.png",
+    "icon": "./src/images/bottle.png",
     "version": "1.0.0",
     "slug": "pottery-app",
     "sdkVersion": "27.0.0",

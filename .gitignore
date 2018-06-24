@@ -1,0 +1,6 @@
+.eslintrc.js
+.expo/
+README.md.copy
+android/
+node_modules/
+src/data.js
