@@ -3,19 +3,11 @@ import { Button, StyleSheet, View, Text, TextInput, KeyboardAvoidingView, Toucha
 import PropTypes from 'prop-types';
 
 export default class LoginForm extends Component {
-    //static propTypes = {navigation: PropTypes.any}
-   // constructor(props) {super(props)}
-
-//() => this.props.navigation.navigate('PotteryType')
-
     handleOnPress(){
          this.props.navigation.navigate('PotteryType')
          console.log("button pressed")
    }
-    render(){
-        //const { navigation } = this.props.navigation;
-        
-        
+    render(){       
         return (
             <View style={styles.container} >
                 <TextInput 
@@ -55,18 +47,15 @@ export default class LoginForm extends Component {
                 onPress={() => this.props.navigation.navigate('PotteryType')}>
                 Guests login</Text>
               </TouchableOpacity>
-
             </View>
-        </View>
-            
+        </View>         
         )
     }
 }
 
 const styles = StyleSheet.create ({
     container: {
-        padding: 20
-        
+        padding: 20      
     },
     input:{
         height: 40,
@@ -94,12 +83,10 @@ const styles = StyleSheet.create ({
         textAlign: 'left',
         fontWeight: '700',
         marginBottom: 60
-
     },
     buttonLeft:{
         fontWeight: '700',
-        marginBottom: 60,
-
+        marginBottom: 60
     },
     buttonText: {
         flexDirection: 'row',
