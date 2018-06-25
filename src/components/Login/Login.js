@@ -3,9 +3,6 @@ import { StyleSheet, View, Image, Text, StatusBar, KeyboardAvoidingView } from '
 import LoginForm from './LoginForm'
 
 export default class Login extends Component {
-    
-    // receives this.props.navigation
-    
     render (){
         return (
         <KeyboardAvoidingView style={styles.container} behavior="padding" enabled >
