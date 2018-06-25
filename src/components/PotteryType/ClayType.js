@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView, Picker } from 'react-native';
 
-
-
 class PickClayType extends Component {
-
    state = {clayType: 'B Mix'}
    updateClayType = (clayType) => {
       this.setState({ clayType: clayType })
    }
    
    render() {
-
       return (
        <View>
         <Picker selectedValue={this.state.clayType} onValueChange={this.updateClayType.bind(this)}>
@@ -26,7 +22,6 @@ class PickClayType extends Component {
       )
    }
 }
-
 
 export default class ClayType extends Component{
     render(){
@@ -51,8 +46,7 @@ export default class ClayType extends Component{
                 </TouchableOpacity>
              
             </View>
-            )
-    
+            ) 
     }
 }
 
@@ -63,12 +57,10 @@ const styles = StyleSheet.create({
     textAlign:'center',
     color:'white',
     margin: 30
-    },
-    
+    },    
     potteryContainer:{
         flex: 1,
         backgroundColor:'#55efc4'
-
     },
     textContainer:{
         alignItems: 'center', 
@@ -79,7 +71,6 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         textAlign: 'center',
         fontWeight: '700',
-        margin: 60
-        
+        margin: 60     
     }
 })
