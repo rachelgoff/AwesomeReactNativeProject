@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { priceDisplay } from '../../util'
 import ajax from '../../ajax'
 
-
 export default class PotteryItemDetail extends Component{
     static propTypes = {
         initialPotteryData: PropTypes.object.isRequired,
@@ -13,23 +12,19 @@ export default class PotteryItemDetail extends Component{
     constructor(props){
         super(props);
            this.state = {
-        potteryItem: this.props.initialPotteryData,
-    }
+            potteryItem: this.props.initialPotteryData,
+           }
     }
         
-
- 
- 
     async componentDidMount(){
         const fullPotteryDetail= await ajax.fetchPotteryDetail(this.state.potteryItem.key)
         console.log(fullPotteryDetail)
     }
-    
 
     render(){
         const { potteryItem } = this.state;
         return(
-        <View style={styles.potteryContainer}>
+          <View style={styles.potteryContainer}>
            <TouchableOpacity style={styles.potteryDetail}>
             <Image style={styles.image} source={{ uri: potteryItem.media[0]}}/>
             <View style={styles.info}> 
@@ -42,8 +37,7 @@ export default class PotteryItemDetail extends Component{
              <Text>...</Text>
            </TouchableOpacity>
            </View>
-         )
-    
+         )    
     }
 }
 
@@ -51,28 +45,21 @@ const styles = StyleSheet.create({
     
     potteryContainer:{
         flex: 1,
-        backgroundColor:'#55efc4'
-        
-
+        backgroundColor:'#55efc4'   
     },
     potteryDetail: {
         marginTop: 50,
-        marginHorizontal: 12,
-        
-     
+        marginHorizontal: 12     
     },
     image: {
         width:'100%',
         height:150
-
     },
     info: {
         padding: 10,
         borderColor: '#bbb',
         borderWidth: 1,
-        borderTopWidth: 0,
-  
-        
+        borderTopWidth: 0   
     },
     title: {
         fontSize: 16,
