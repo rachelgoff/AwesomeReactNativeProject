@@ -14,8 +14,6 @@ import CameraScreen from './src/components/PotteryType/CameraScreen';
 import PotteryLists from './src/components/SummaryPage/PotteryLists';
 import ajax from './src/ajax';
 
-
-
 const RootStack = createStackNavigator(
   {
     Login: {screen: Login},
@@ -32,46 +30,12 @@ const RootStack = createStackNavigator(
     initialRouteName:'Login',
     headerMode:'none'
   }
-  
   )
 
-
-console.log(clayData.clayType[0])
-
 export default class App extends Component {
- 
-  
   render(){
     return (
       <RootStack clayTypes={clayData.clayType}/>
-
       )
   }
 }
-
-
-// class HomeScreen extends React.Component {
-//   render(){
-//     return (
-//       <View style = {styles.container}>
-//         <Text>Home Screen</Text>
-//       </View>
-//       );
-//   }
-  
-// }
-
-// export default createStackNavigator({
-//   Home: {
-//     screen: HomeScreen,
-//   },
-// })
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#1abc9c',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
