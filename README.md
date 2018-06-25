@@ -33,6 +33,8 @@ $ npm install
 ```
 
 ## Run the PotteryClient app on iOS or Android using Expo
+Note: running the app through Expo on iOS requires the server to be accessible through a secure (https) URL. See https://facebook.github.io/react-native/docs/network.html for more information.
+
 ### Start the app
 ```
 $ exp start
@@ -49,6 +51,8 @@ Install the [Expo Client for iOS](https://itunes.apple.com/us/app/expo-client/id
 More info about Expo can be found at https://docs.expo.io/versions/v28.0.0/introduction/installation.
 
 ## Run the PotteryClient app on iOS using the XCode Simulator
+Running the app this way allows you to develop and test with an insecure (http) server locally or remotely since the simulator does not enforce App Transport Security (ATS).
+
 Install XCode on your macOS. Install react-native-cli on your device and run the app in the simulator.
 ```
 $ npm install -g react-native-cli
