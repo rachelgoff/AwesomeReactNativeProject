@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-export default class PotteryType extends Component{
-    
-
-  
+export default class PotteryType extends Component{ 
     render(){
         return(
             <View style={styles.potteryContainer}>
@@ -34,8 +31,7 @@ export default class PotteryType extends Component{
                     Go back</Text>
                 </TouchableOpacity>
             </View>
-            )
-    
+          )
     }
 }
 
@@ -45,8 +41,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign:'center',
     color:'white'
-    },
-    
+    },    
     potteryContainer:{
         flex: 1,
         backgroundColor:'#55efc4'
@@ -70,7 +65,6 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         textAlign: 'center',
         fontWeight: '700',
-        margin: 60
-        
+        margin: 60  
     }
 })
