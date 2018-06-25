@@ -3,7 +3,6 @@ import { View, StyleSheet, Text, Image, TouchableOpacity, FlatList } from 'react
 import PropTypes from 'prop-types';
 import { priceDisplay } from '../../util'
 
-
 export default class PotteryItem extends Component{
     static propTypes = {
         potteryItem: PropTypes.object.isRequired,
@@ -13,8 +12,7 @@ export default class PotteryItem extends Component{
     handlePress = () =>{
         this.props.onPress(this.props.potteryItem.key)
     }
-    
-    
+        
     render(){
         const { potteryItem } = this.props;
         return(
@@ -29,17 +27,14 @@ export default class PotteryItem extends Component{
              </View>
            </TouchableOpacity>
          )
-    
     }
 }
 
 const styles = StyleSheet.create({
-    
-    potteryContainer:{
+     potteryContainer:{
         flex: 1,
         backgroundColor:'#55efc4'
-
-    },
+        },
     image: {
         width:'100%',
         height:150
@@ -48,8 +43,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderColor: '#bbb',
         borderWidth: 1,
-        borderTopWidth: 0,
-        
+        borderTopWidth: 0 
     },
     title: {
         fontSize: 16,
