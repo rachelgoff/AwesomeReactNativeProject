@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView, Picker } from 'react-native';
 
-
-
 class PickFiringType extends Component {
-
    state = {firingType: 'Bisque'}
    updateFiringType = (firingType) => {
       this.setState({ firingType: firingType })
    }
    
    render() {
-
       return (
        <View>
          <Picker selectedValue={this.state.firingType} onValueChange={this.updateFiringType.bind(this)}>
@@ -31,7 +27,6 @@ class PickFiringType extends Component {
       )
    }
 }
-
 
 export default class FireType extends Component{
     render(){
@@ -53,11 +48,9 @@ export default class FireType extends Component{
                     <Text style={styles.buttonTextLeft} 
                           onPress={() => this.props.navigation.goBack()}>
                     Go back</Text>
-                </TouchableOpacity>
-               
+                </TouchableOpacity>               
             </View>
-            )
-    
+         )
     }
 }
 
@@ -69,11 +62,9 @@ const styles = StyleSheet.create({
     color:'white',
     margin: 30
     },
-    
     potteryContainer:{
         flex: 1,
         backgroundColor:'#55efc4'
-
     },
     textContainer:{
         alignItems: 'center', 
@@ -84,7 +75,6 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         textAlign: 'center',
         fontWeight: '700',
-        margin: 60
-        
+        margin: 60       
     }
 })
