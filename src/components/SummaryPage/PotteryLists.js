@@ -3,7 +3,6 @@ import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView } from 'rea
 import PotteryItems from './PotteryItems';
 import PotteryItem from './PotteryItem';
 import PotteryItemDetail from './PotteryItemDetail';
-
 import ajax from '../../ajax.js'
 
 export default class PotteryLists extends Component{
@@ -11,6 +10,7 @@ export default class PotteryLists extends Component{
     potteryLists: [],
     currentPotteryId: null
   }
+
   async componentDidMount(){
     const potteryLists = await ajax.fetchPotteryLists();
     console.log(potteryLists);
@@ -19,20 +19,20 @@ export default class PotteryLists extends Component{
       
     });
   }
+
   setCurrentPottery = (potteryId) => {
       this.setState(()=>{
           currentPotteryId: potteryId
       })
   }
   
-    currentPottery = () => {
+  currentPottery = () => {
         return this.state.potteryLists.find(
             (potteryItem) => potteryItem.key === this.state.currentPotteryId
             );
-    }
+  }
   
-    render(){
-        
+  render(){
         if (this.state.currentPotteryId) {
             return <PotteryItemDetail potteryItem = {this.currentPottery()}/>
         }
@@ -50,11 +50,9 @@ export default class PotteryLists extends Component{
                     <Text style={styles.buttonTextLeft} 
                           onPress={() => this.props.navigation.goBack()}>
                     Go back</Text>
-                </TouchableOpacity>
-         
+                </TouchableOpacity>         
            </View>
-         )
-    
+         )    
     }
 }
 
@@ -67,12 +65,10 @@ const styles = StyleSheet.create({
     alignItems:'center',
     color:'white',
     margin: 100
-    },
-    
+    },  
     potteryContainer:{
         flex: 1,
         backgroundColor:'#55efc4'
-
     },
     textContainer:{
         alignItems: 'center', 
@@ -83,7 +79,6 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         textAlign: 'center',
         fontWeight: '700',
-        margin: 60
-        
+        margin: 60        
     }
 })
