@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView, Picker } from 'react-native';
 
-
-
 class PickGlazeType extends Component {
-
    state = {glazeType: 'Celadon'}
    updateGlazeType = (glazeType) => {
       this.setState({ glazeType: glazeType })
    }
    
    render() {
-
       return (
        <View>
         <Picker selectedValue={this.state.glazeType} onValueChange={this.updateGlazeType}>
@@ -30,12 +26,10 @@ class PickGlazeType extends Component {
    }
 }
 
-
 export default class GlazeType extends Component{
     render(){
         return(
-            <View style={styles.potteryContainer}>
-   
+            <View style={styles.potteryContainer}> 
                 <View style={styles.textContainer}>
                     <Text style={styles.potteryDescription}>
                     What's the glaze type?
@@ -51,11 +45,9 @@ export default class GlazeType extends Component{
                     <Text style={styles.buttonTextLeft} 
                           onPress={() => this.props.navigation.goBack()}>
                     Go back</Text>
-                </TouchableOpacity>
-               
+                </TouchableOpacity>               
             </View>
-            )
-    
+         )
     }
 }
 
@@ -66,12 +58,10 @@ const styles = StyleSheet.create({
     textAlign:'center',
     color:'white',
     margin: 30
-    },
-    
+    }, 
     potteryContainer:{
         flex: 1,
         backgroundColor:'#55efc4'
-
     },
     textContainer:{
         alignItems: 'center', 
@@ -83,6 +73,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: '700',
         margin: 60
-        
     }
 })
